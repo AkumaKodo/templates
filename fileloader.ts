@@ -1,1 +1,0 @@
-import "file:///C:/Users/ThatGuyJamal/Desktop/code/akumakodo/templates/src/commands/ping.ts#0";

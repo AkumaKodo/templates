@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "Akuma",
+    "akumakodo",
+    "Deno",
+    "Kodo"
+  ],
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true
+}

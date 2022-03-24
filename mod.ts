@@ -18,12 +18,18 @@ const Bot = new AkumaKodoBotCore(
   },
   {
     optional: {
-      bot_development_server_id: BigInt(DEV_GUILD),
+      bot_fetch_owners: true,
       bot_debug_mode: true,
+      bot_log_command_reply: true,
       providers: {
         type: "disabled",
       },
-      bot_internal_events: true
+      bot_internal_events: {
+        interactionCreate: true,
+      },
+    },
+    required: {
+      bot_development_server_id: BigInt(DEV_GUILD),
     },
   },
 );

@@ -3,6 +3,7 @@
     "Akuma",
     "akumakodo",
     "Deno",
+    "Discordeno",
     "Kodo"
   ],
   "deno.enable": true,

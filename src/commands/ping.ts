@@ -8,6 +8,12 @@ Bot.container.utils.createCommand(Bot, {
   description: "Ping me!",
   // The scope - sets the slash command to global or guild only
   scope: "Development",
+  // Limiters for command usage.
+  rateLimit: {
+    duration: 8000,
+    limit: 1,
+  },
+  devOnly: true,
   // Command callback to run when called
   run: async (interaction) => {
     return await Bot.container.utils.createCommandReply(

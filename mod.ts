@@ -18,12 +18,10 @@ const Bot = new AkumaKodoBotCore(
   },
   {
     optional: {
-      bot_fetch_owners: true,
+      bot_owners_ids: [BigInt("370637638820036608")],
+      bot_fetch_owners: false,
       bot_debug_mode: true,
       bot_log_command_reply: true,
-      providers: {
-        type: "disabled",
-      },
       bot_internal_events: {
         interactionCreate: true,
       },

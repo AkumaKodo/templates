@@ -16,6 +16,11 @@ Bot.container.utils.createCommand(Bot, {
   devOnly: true,
   // Command callback to run when called
   run: async (interaction) => {
+    const myBtn = Bot.container.utils.createCommandButton(Bot, "Pong!", {
+      setStyle: "Success",
+      setLink: "https://api.github.com"
+    });
+
     return await Bot.container.utils.createCommandReply(
       Bot,
       interaction,
@@ -25,6 +30,7 @@ Bot.container.utils.createCommand(Bot, {
             `🏓Pong! ${Date.now() - snowflakeToTimestamp(interaction.id)}`,
           ),
         ],
+        components: myBtn,
       },
       false,
     );

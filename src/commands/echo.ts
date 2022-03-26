@@ -22,7 +22,7 @@ Bot.container.utils.createCommand(Bot, {
   ownerOnly: true,
   // Command callback to run when called
   run: async (interaction: DiscordenoInteraction) => {
-    const context = interaction.data?.options?.find((option) => option.name === "message")
+    const context = interaction.data?.options?.find((option) => option.name === "message");
 
     return await Bot.container.utils.createCommandReply(
       Bot,

@@ -1,4 +1,4 @@
-import { snowflakeToTimestamp } from "https://deno.land/x/akumakodo@0.1.0/core/lib/utils/helpers.ts";
+import { Button, Components, snowflakeToTimestamp } from "../../deps.ts";
 import { Bot } from "../../mod.ts";
 
 Bot.container.utils.createCommand(Bot, {
@@ -13,14 +13,16 @@ Bot.container.utils.createCommand(Bot, {
     duration: 8000,
     limit: 1,
   },
+  // If the command should only be ran in the dev server
   devOnly: true,
   // Command callback to run when called
   run: async (interaction) => {
-    const myBtn = Bot.container.utils.createCommandButton(Bot, "Pong!", {
-      setStyle: "Success",
-      setLink: "https://api.github.com"
-    });
 
+    const btn: Components = new Components().addComponent(
+      new Button()
+        .setLabel("Invite").setUrl("https://discord.com/oauth2/authorize?client_id=946398697254703174&permissions=8&scope=bot")
+    )
+    
     return await Bot.container.utils.createCommandReply(
       Bot,
       interaction,
@@ -30,7 +32,7 @@ Bot.container.utils.createCommand(Bot, {
             `🏓Pong! ${Date.now() - snowflakeToTimestamp(interaction.id)}`,
           ),
         ],
-        components: myBtn,
+        components: btn
       },
       false,
     );

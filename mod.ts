@@ -7,6 +7,7 @@ const TOKEN = env.DISCORD_BOT_TOKEN || "";
 // These are type script so remember to convert to BigInt
 const DEV_GUILD = env.DISCORD_DEV_GUILD || "";
 const BOT_ID = env.DISCORD_BOT_ID || "";
+const MONGODB_URL = env.MONGODB_URL || "";
 
 // Bot configuration
 const Bot = new AkumaKodoBotCore(
@@ -39,5 +40,8 @@ await Bot.container.fs.fastLoader(Bot, [
 
 // Creates ws connection and starts listening
 await Bot.createBot();
+
+// await Bot.mongodb.connect();
+// await Bot.mongodb.initialize();
 
 export { Bot };

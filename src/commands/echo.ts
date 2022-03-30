@@ -2,7 +2,7 @@ import {
   ApplicationCommandOptionTypes,
   type DiscordenoInteraction,
 } from "https://deno.land/x/discordeno@13.0.0-rc18/mod.ts";
-import { Bot } from "../../mod.ts";
+import { Bot} from "../../mod.ts";
 
 Bot.container.utils.createCommand(Bot, {
   // The command name
@@ -18,7 +18,9 @@ Bot.container.utils.createCommand(Bot, {
     description: "The message to echo",
     required: true,
   }],
+  // If the command should only be ran in the dev server
   devOnly: true,
+  // If only the bot owners can run this command
   ownerOnly: true,
   // Command callback to run when called
   run: async (interaction: DiscordenoInteraction) => {
